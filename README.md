@@ -1,6 +1,6 @@
 # OnlineLearningPlatform
 
-Home page/n
+Home page
 Use Authentication 
 Course preview 
 Payment gateway
