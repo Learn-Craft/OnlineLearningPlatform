@@ -1,0 +1,51 @@
+.header-container{
+    background-color: rgb(32, 138, 138);
+    height: 75px;
+    display: flex;
+    align-items: center;
+    transition: all .25s linear;
+}
+.logo-container a{
+    padding: 0px;
+    padding-bottom: 10px;
+}
+.header-container div a img{
+    width: auto;
+    height: 50px;
+}
+.header-container div nav menu{
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding-left: 150px;
+}
+.header-container div nav menu li{
+    padding: 15px 10px;
+}
+.header-container div nav menu li a{
+    color: rgb(255, 255, 255);
+    position: relative;
+    text-decoration: none;
+    font-family: FontNo1;
+    font-size: 1.2em;
+    font-weight: 800;
+    padding: 10px 10px;
+    transition: .5s;
+}
+.header-container a:link{
+    color: #f4f4f4;
+}
+.header-container a:hover, .header-container a:active{
+    color: #000000;
+}
+.dropdown button{
+    padding-top: 15px;
+    color: #f4f4f4;
+    font-family: FontNo1;
+    font-size: 1.2em;
+    font-weight: 800;
+}
+.dropdown-menu .dropdown-item{
+    color: #000000;
+    font-size: 10px;
+}
