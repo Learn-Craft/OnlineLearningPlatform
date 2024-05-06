@@ -1,28 +1,38 @@
-/*=============== SHOW MENU ===============*/
-const navMenu = document.getElementById('nav-menu'),
-      navToggle = document.getElementById('nav-toggle'),
-      navClose = document.getElementById('nav-close')
+let body = document.body;
 
-/* Menu show */
-if(navToggle){
-    navToggle.addEventListener('click', () =>{
-        navMenu.classList.add('show-menu')
-    })
+let profile = document.querySelector('.header .flex .profile');
+
+document.querySelector('#user-btn').onclick = () =>{
+   profile.classList.toggle('active');
+   searchForm.classList.remove('active');
 }
 
-/* Menu hidden */
-if(navClose){
-    navClose.addEventListener('click', () =>{
-        navMenu.classList.remove('show-menu')
-    })
+let searchForm = document.querySelector('.header .flex .search-form');
+
+document.querySelector('#search-btn').onclick = () =>{
+   searchForm.classList.toggle('active');
+   profile.classList.remove('active');
 }
 
-/*=============== REMOVE MENU MOBILE ===============*/
-const navLink = document.querySelectorAll('.nav__link')
+let sideBar = document.querySelector('.side-bar');
 
-const linkAction = () =>{
-    const navMenu = document.getElementById('nav-menu')
-    // When we click on each nav__link, we remove the show-menu class
-    navMenu.classList.remove('show-menu')
+document.querySelector('#menu-btn').onclick = () =>{
+    sideBar.classList.toggle('active');
+    body.classList.toggle('active');
 }
-navLink.forEach(n => n.addEventListener('click', linkAction))
+
+document.querySelector('.side-bar .close-side-bar').onclick = () =>{
+    sideBar.classList.remove('active');
+    body.classList.remove('active');
+}
+
+window.onscroll = () =>{
+    profile.classList.remove('active');
+    searchForm.classList.remove('active');
+
+if(window.innerWidth < 1200){
+    sideBar.classList.remove('active');
+    body.classList.remove('active');
+}
+
+}
