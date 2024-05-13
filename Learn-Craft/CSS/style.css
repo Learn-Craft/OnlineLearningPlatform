@@ -54,7 +54,7 @@ body.active{
 }
 
 body.dark{
-  --light-color:#aaa;
+  --light-color:#e5dada;
   --light-bg:#333;
   --black:#fff;
   --white:#222;
@@ -145,6 +145,8 @@ section{
   margin-bottom: 2rem;
 }
 
+/* header styling */
+
 .header{
   background-color: var(--white);
   border-bottom: var(--border);
@@ -154,6 +156,7 @@ section{
   right: 0;
   z-index: 1000;
 }
+
 .header .flex{
   padding: 1.5rem 2rem;
   position: relative;
@@ -341,6 +344,46 @@ section{
   left: -31rem;
 }
 
+/* home page styling */
+
+.home {
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.home .image {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 42rem;
+          flex: 1 1 42rem;
+}
+
+.home .image img {
+  width: 100%;
+}
+
+.home .content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 42rem;
+          flex: 1 1 42rem;
+}
+
+.home .content h3 {
+  color: var(--black);
+  font-size: 3.5rem;
+}
+
+.home .content p {
+  font-size: 1.4rem;
+  color: var(--light-color);
+  padding: 1rem 0;
+  line-height: 2.5;
+}
+
 .quick-select .box-container{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(27.5rem, 1fr));
@@ -364,7 +407,7 @@ section{
 .quick-select .box-container .box p{
   line-height: 1.5;
   padding-top: 1.5rem;
-  color: black;
+  color: var(--light-color);
   font-size: 1.8rem;
 }
 
@@ -445,7 +488,7 @@ section{
 
 .courses .box-container .box .tutor h3{
   font-size: 2rem;
-  color: black;
+  color: var(--light-color);
   margin-bottom: .2rem;
 }
 
@@ -473,7 +516,119 @@ section{
   text-align: center;
 }
 
+/* About page styling */
+.about .row{
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
 
+.about .row .image{
+  flex: 1 1 40rem;
+}
+
+.about .row .image img{
+  width: 100%;
+  height: 50rem;
+}
+
+.about .row .content{
+  flex: 1 1 40rem;
+  text-align: center;
+}
+
+.about .row .content h3{
+  font-size: 2.5rem;
+  color: var(--black);
+}
+
+.about .row .content p{
+  line-height: 2;
+  font-size: 1.7rem;
+  color: var(--light-color);
+  padding: 1rem 0;
+}
+
+.about .box-container{
+  margin-top: 3rem;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.about .box-container .box{
+  flex: 1 1 25rem;
+  display: flex;
+  background-color: var(--white);
+  border-radius: .5rem;
+  padding: 2rem;
+  align-items: center;
+  gap: 2rem;
+}
+
+.about .box-container .box i{
+  font-size: 3rem;
+  color: var(--black);
+}
+
+
+.about .box-container .box h3{
+  color: var(--main-color);
+  font-size: 2.5rem;
+  margin-top: .2rem;
+}
+
+.about .box-container .box span{
+  font-size: 1.6rem;
+  color: var(--light-color);
+}
+
+.reviews .box-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.reviews .box-container .box{
+  border-radius: .5rem;
+  padding: 2rem;
+  background-color: var(--white);
+  padding-top: 1.5rem;
+}
+
+.reviews .box-container .box p{
+  line-height: 2;
+  font-size: 1.7rem;
+  color: var(--light-color);
+}
+
+.reviews .box-container .box .user{
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.reviews .box-container .box .user img{
+  height: 5rem;
+  width: 5rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.reviews .box-container .box .user h3{
+  font-size: 2rem;
+  color: var(--black);
+  margin-bottom: .2rem;
+}
+
+.reviews .box-container .box .user .stars i{
+  color: var(--main-color);
+  font-size: 1.5rem;
+}
 
 
 
@@ -595,4 +750,7 @@ section{
     gap: 0;
   }
 
+  .about .row .image img{
+    height: auto;
+  }
 }
