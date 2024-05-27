@@ -1394,6 +1394,14 @@ section{
   padding: 2rem;
 }
 
+.footer .footer-1 div a{
+  color: var(--black);
+}
+
+.footer .footer-1 div a:hover{
+  color: var(--main-color);
+}
+
 .footer span{
   color:var(--main-color);
 }
