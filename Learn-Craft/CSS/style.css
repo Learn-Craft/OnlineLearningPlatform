@@ -1332,6 +1332,136 @@ section{
   background-color: var(--light-bg);
 }
 
+.blog  .box-container{
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(31rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+  gap: 1.5rem;
+}
+
+.blog .box .image {
+  height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.blog .box .image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: .5rem;
+}
+
+.blog .box .content {
+  padding: 2rem;
+  background: var(--white);
+}
+
+.blog .box .content .icons {
+  padding: 1.5rem 0;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.blog .box .content .icons a {
+  font-size: 1.4rem;
+  color: var(--light-color);
+}
+
+.blog .box .content .icons a:hover {
+  color: var(--main-color);
+}
+
+.blog .box .content .icons a i {
+  padding-right: .5rem;
+  color: var(--main-color);
+}
+
+.blog .box .content h3 {
+  font-size: 1.7rem;
+  padding: .5rem 0;
+  color: var(--black);
+}
+
+.blog .box .content p {
+  padding: 1rem 0;
+  font-size: 1.4rem;
+  line-height: 2.5;
+  color: var(--light-color);
+}
+
+.blog .search-tutor{
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 2rem;
+  background-color: var(--white);
+  border-radius: .5rem;
+}
+
+.blog .search-tutor input{
+  width: 100%;
+  font-size: 1.8rem;
+  color: var(--black);
+  background: none;
+}
+
+.blog .search-tutor button{
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--black);
+  background: none;
+}
+
+.blog .search-tutor button:hover{
+  color: var(--main-color);
+}
+
+.view-blog .box-container .icons {
+  padding: 1.5rem 0;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.view-blog .box-container p{
+  margin: 1rem;
+  font-size: 2rem;
+  color: var(--black);
+}
+
+.view-blog .box-container .icons a {
+  font-size: 1.7rem;
+  color: var(--light-color);
+}
+
+.view-blog .box-container .icons a:hover {
+  color: var(--main-color);
+}
+
+.view-blog .box-container .icons a i {
+  padding-right: .5rem;
+  color: var(--main-color);
+}
+
 
 
 
