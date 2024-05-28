@@ -577,7 +577,6 @@ section{
   color: var(--black);
 }
 
-
 .about .box-container .box h3{
   color: var(--main-color);
   font-size: 2.5rem;
@@ -589,6 +588,58 @@ section{
   color: var(--light-color);
 }
 
+.about .mission{
+  margin-top: 3rem;
+}
+
+.about .mission .part1{
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.about .mission .part1 h1{
+  font-size: 4rem;
+}
+
+.about .mission .part1 p{
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--black);
+}
+
+.about .mission .part1 p span{
+  color: var(--main-color);
+}
+
+.mission .mission-flex{
+  margin-top: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.mission .mission-flex .vision{
+  flex: 1 1 25rem;
+  display: flex;
+  background-color: var(--white);
+  border-radius: .5rem;
+  padding: 2rem;
+  align-items: center;
+  gap: 3rem;
+}
+
+.mission .mission-flex .vision h3{
+  color: var(--main-color);
+  font-size: 3rem;
+  margin-top: .2rem;
+  text-align: center;
+}
+
+.mission .mission-flex .vision p{
+  font-size: 2rem;
+  color: var(--light-color);
+  text-align: center;
+}
 
 .reviews .box-container{
   display: grid;
