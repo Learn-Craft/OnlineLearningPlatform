@@ -1,0 +1,14 @@
+{
+  "name": "onlinelearningplatform",
+  "version": "1.0.0",
+  "description": "1. Home page\r 2. Use Authentication Course preview\r 3. Payment gateway\r 4. Database\r 5. Doubt(chat API)\r 6. Language converter\r 7. Profile viewer\r 8. Theme -(dark/light)",
+  "main": "node.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

@@ -1,18 +1,25 @@
 // importing the required modules
 const fs = require("fs");
 const http = require("http");
-const home = fs.readFileSync("../Home.html");
-const about = fs.readFileSync("../About.html");
-const contact = fs.readFileSync("../Contact.html");
-const courses = fs.readFileSync("../Courses.html");
-const logIn = fs.readFileSync("../Login.html");
-const playlist = fs.readFileSync("../Playlist.html");
-const profile = fs.readFileSync("../Profile.html");
-const register = fs.readFileSync("../Register.html");
-const teacher_profile = fs.readFileSync("../Teacher_profile.html");
-const teachers = fs.readFileSync("../Teachers.html");
-const update = fs.readFileSync("../Update.html");
-const watch_video = fs.readFileSync("../Watch-video.html");
+const express = require ("express");
+
+// reading files
+const home = fs.readFileSync("./Home.html");
+const about = fs.readFileSync("./About.html");
+const contact = fs.readFileSync("./Contact.html");
+const courses = fs.readFileSync("./Courses.html");
+const logIn = fs.readFileSync("./Login.html");
+const playlist = fs.readFileSync("./Playlist.html");
+const profile = fs.readFileSync("./Profile.html");
+const register = fs.readFileSync("./Register.html");
+const teacher_profile = fs.readFileSync("./Teacher_profile.html");
+const teachers = fs.readFileSync("./Teachers.html");
+const update = fs.readFileSync("./Update.html");
+const watch_video = fs.readFileSync("./watch_video.html");
+
+// starting the express app
+const app = express();
+app.use(express.static("CSS"))
 
 // creating the server
 const createServer = http.createServer( (request, response) =>{
@@ -60,6 +67,6 @@ const createServer = http.createServer( (request, response) =>{
 });
 
 // Starting the server
-createServer.listen(1000, '127.0.0.1', ()=>{
+createServer.listen(2000, '127.0.0.1', ()=>{
     console.log("hello");
 })
