@@ -458,6 +458,28 @@ section{
   color: var(--white);
 }
 
+/*   === Teacher Section Styling Starts ===   */
+section.instructor{
+	width: 100%;
+	padding: 40px 8% 20px;
+}
+.instructor .instructor-container{
+	width: 100%;
+	padding: 70px 8%;
+	background-color: rgb(36, 199, 180, .2);
+	border-radius: 0px 100px 0px 100px;
+}
+.instructor-container h2{
+	font-size: 2.5rem;
+	color: var(--black);
+}
+.instructor-container p{
+	margin: 20px 0px 35px;
+	color: var(--light-color);
+  font-size: 1.7rem;
+}
+/*   === Teacher Section Styling Ends ===   */
+
 .courses .box-container{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
