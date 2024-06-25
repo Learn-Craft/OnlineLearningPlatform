@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" >
     <meta name="robots" content="noindex, nofollow" >
     <!-- add the CSS -->
-    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="../CSS/style.css">
     <!-- FOnt Awesome Link-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <title>Register Page</title>
@@ -67,47 +67,27 @@
 
 
   <!-- side bar section ends -->
+  <!-- Register section starts -->
 
-<!-- Courses Section starts -->
-<section class="courses">
-    <h1 class="heading">Our Popular Courses</h1>
-
-    <div class="box-container">
-
-      <div class="box">
-        <img src="./IMG/science-1.jfif" class="thumb" alt="thumb1">
-        <h3 class="title">Chemistry Tutorial</h3>
-        <a href="Playlist.html" class="inline-btn">View Playlist</a>
-      </div>
-
-      <div class="box">
-        <img src="./IMG/science-2.jfif" class="thumb" alt="thumb1">
-        <h3 class="title">Physics Tutorial</h3>
-        <a href="Playlist.html" class="inline-btn">View Playlist</a>
-      </div>
-
-      <div class="box"> 
-        <img src="./IMG/science-3.jfif" class="thumb" alt="thumb1">
-        <h3 class="title">Biology Tutorial</h3>
-        <a href="Playlist.html" class="inline-btn">View Playlist</a>
-      </div>
-
-      <div class="box"> 
-        <img src="./IMG/science-4.jfif" class="thumb" alt="thumb1">
-        <h3 class="title">Anatomy Tutorial</h3>
-        <a href="Playlist.html" class="inline-btn">View Playlist</a>
-      </div>
-
-      <div class="box">
-        <img src="./IMG/science-5.jfif" class="thumb" alt="thumb1">
-        <h3 class="title">Solar Energy Tutorial</h3>
-        <a href="Playlist.html" class="inline-btn">View Playlist</a>
-      </div>
-
-    </div>
-    
+  <section class="form-container">
+    <form action="" method="post" enctype="multipart/form-data">
+      <h3>Register New</h3>
+      <p>Your Name<span>*</span>
+      </p>
+      <input type="text" name="name" placeholder="Enter your Name" maxlength="100" required class="box">
+      <p>Your Email<span>*</span></p>
+      <input type="email" name="email" placeholder="Enter Your Email" maxlength="100" class="box" required>
+      <p>Your Password<span>*</span></p>
+      <input type="password" name="pass" placeholder="Enter your Password" maxlength="50" class="box" required>
+      <p>Confirm Password<span>*</span></p>
+      <input type="password" name="c_pass" placeholder="Confirm your Password" maxlength="50" class="box" required>
+      <p>Select Photo<span>*</span>
+      </p>
+      <input type="file" name="image" accept="image/*" class="box">
+      <input type="submit" value="Register Now" name="submit" class="btn">
+    </form>
   </section>
-  <!-- Courses Section ends -->
+  <!-- Register section ends -->
 
    <!-- footer section starts -->
 

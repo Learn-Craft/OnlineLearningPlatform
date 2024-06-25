@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" >
     <meta name="robots" content="noindex, nofollow" >
     <!-- add the CSS -->
-    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="../CSS/style.css">
     <!-- FOnt Awesome Link-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-    <title>Register Page</title>
+    <title>Playlist Page</title>
   </head>
   <body>
     <!-- header section Starts -->
@@ -67,30 +67,103 @@
 
 
   <!-- side bar section ends -->
-  <!-- Register section starts -->
+  <!-- Playlist section starts -->
 
-  <section class="form-container">
-    <form action="" method="post" enctype="multipart/form-data">
-      <h3>Register New</h3>
-      <p>Your Name<span>*</span>
-      </p>
-      <input type="text" name="name" placeholder="Enter your Name" maxlength="100" required class="box">
-      <p>Your Email<span>*</span></p>
-      <input type="email" name="email" placeholder="Enter Your Email" maxlength="100" class="box" required>
-      <p>Your Password<span>*</span></p>
-      <input type="password" name="pass" placeholder="Enter your Password" maxlength="50" class="box" required>
-      <p>Confirm Password<span>*</span></p>
-      <input type="password" name="c_pass" placeholder="Confirm your Password" maxlength="50" class="box" required>
-      <p>Select Photo<span>*</span>
-      </p>
-      <input type="file" name="image" accept="image/*" class="box">
-      <input type="submit" value="Register Now" name="submit" class="btn">
-    </form>
+  <section class="playlist">
+    <h1 class="heading">Playlist Details</h1>
+
+    <div class="row">
+
+      <div class="col">
+        <form action="" method="post" class="save-list">
+          <button type="submit" name="Save-list"><i class="far fa-bookmark"></i><span>Save Playlist</span></button>
+        </form>
+        <div class="thumb">
+          <span>6 Videos</span>
+          <img src="./IMG/thumb-1.png" alt="">
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="tutor">
+          <img src="./IMG/pic-2.jpg" alt="">
+          <div>
+          <h3>John Deo</h3>
+          <span>Developer</span>
+          </div>
+        </div>
+        <div class="details">
+          <h3>Complete HTML Tutorial</h3>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo asperiores ipsa dolore inventore ullam assumenda quisquam est, quos laudantium a aperiam. Repudiandae ipsa vel laboriosam dolorum temporibus commodi velit minus.</p>
+          <div class="date"><i class="fas fa-calendar"></i><span>21-25-2022</span></div>
+        </div>
+      </div>
+
+    </div>
+
   </section>
-  <!-- Register section ends -->
+
+  <!-- Playlist section ends -->
+
+  <!-- videos container section starts -->
+
+   <section class="videos-container">
+    <h1 class="heading">Playlist Videos</h1>
+
+    <div class="box-container">
+
+      <a href="Watch-video.html" class="box">
+        <i class="fas fa-play"></i>
+        <img src="./IMG/post-1-1.png" alt="">
+        <h3>Complete HTML Tutorial (part 01)</h3>
+      </a>
+
+      <a href="Watch-video.html" class="box">
+        <i class="fas fa-play"></i>
+        <img src="./IMG/post-1-2.png" alt="">
+        <h3>Complete HTML Tutorial (part 02)</h3>
+      </a>
+
+      <a href="Watch-video.html" class="box">
+        <i class="fas fa-play"></i>
+        <img src="./IMG/post-1-3.png" alt="">
+        <h3>Complete HTML Tutorial (part 03)</h3>
+      </a>
+
+      <a href="Watch-video.html" class="box">
+        <i class="fas fa-play"></i>
+        <img src="./IMG/post-1-4.png" alt="">
+        <h3>Complete HTML Tutorial (part 04)</h3>
+      </a>
+
+      <a href="Watch-video.html" class="box">
+        <i class="fas fa-play"></i>
+        <img src="./IMG/post-1-5.png" alt="">
+        <h3>Complete HTML Tutorial (part 05)</h3>
+      </a>
+
+      <a href="Watch-video.html" class="box">
+        <i class="fas fa-play"></i>
+        <img src="./IMG/post-1-6.png" alt="">
+        <h3>Complete HTML Tutorial (part 06)</h3>
+      </a>
+
+    </div>
+
+   </section>
+
+  <!-- videos container section ends -->
+
+  
+
+
+
+
+
 
    <!-- footer section starts -->
 
+   
     <footer class="footer">
 
       <div class="footer-1">
