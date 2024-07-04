@@ -1,31 +1,55 @@
+// Import necessary modules
 const express = require('express');
 const path = require('path');
+const dotenv = require('dotenv');
+
+// Load environment variables
+dotenv.config();
+
+// Initialize the Express app
 const app = express();
 
-// Serve static files from the CSS directory
-app.use('/CSS', express.static(path.join(__dirname, 'CSS')));
+// Set up middleware to parse JSON requests
+app.use(express.json());
 
-// Serve HTML files using Express
-app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'views', 'home.html')));
-app.get('/home.html', (req, res) => res.sendFile(path.join(__dirname, 'views', 'home.html')));
-app.get('/about.html', (req, res) => res.sendFile(path.join(__dirname, 'views', 'about.html')));
-app.get('/contact.html', (req, res) => res.sendFile(path.join(__dirname, 'views', 'contact.html')));
-app.get('/courses.html', (req, res) => res.sendFile(path.join(__dirname, 'views', 'courses.html')));
-app.get('/login.html', (req, res) => res.sendFile(path.join(__dirname, 'views', 'login.html')));
-app.get('/playlist.html', (req, res) => res.sendFile(path.join(__dirname, 'views', 'playlist.html')));
-app.get('/profile.html', (req, res) => res.sendFile(path.join(__dirname, 'views', 'profile.html')));
-app.get('/register.html', (req, res) => res.sendFile(path.join(__dirname, 'views', 'register.html')));
-app.get('/teacherprofile.html', (req, res) => res.sendFile(path.join(__dirname, 'views', 'teacher_profile.html')));
-app.get('/teachers.html', (req, res) => res.sendFile(path.join(__dirname, 'views', 'teachers.html')));
-app.get('/update.html', (req, res) => res.sendFile(path.join(__dirname, 'views', 'update.html')));
-app.get('/watchvideo.html', (req, res) => res.sendFile(path.join(__dirname, 'views', 'watch_video.html')));
+// Serve static files from the 'css' directory
+app.use('/css', express.static(path.join(__dirname, 'css')));
 
-// Handle 404
+// Define a list of available pages
+const pages = [
+    'home', 'about', 'contact', 'courses', 'login', 
+    'playlist', 'profile', 'register', 'teacher_profile', 
+    'teachers', 'update', 'watch_video'
+];
+
+// Serve HTML files dynamically
+pages.forEach(page => {
+    app.get(`/${page}.html`, (req, res) => {
+        res.sendFile(path.join(__dirname, 'views', `${page}.html`));
+    });
+});
+
+// Handle the root route
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'home.html'));
+});
+
+// Handle 404 errors
 app.use((req, res) => {
     res.status(404).send('Error 404: Page not found');
 });
 
+// Connect to MongoDB
+const connectDB = require('./config/db');
+connectDB().catch(err => {
+    console.error('Failed to connect to MongoDB:', err);
+});
+
+// Import and use authentication routes
+app.use('/api/auth', require('./routes/auth'));
+
 // Start the server
-app.listen(2000, () => {
-    console.log('Server running on http://127.0.0.1:2000');
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+    console.log(`Server running on http://127.0.0.1:${PORT}`);
 });
