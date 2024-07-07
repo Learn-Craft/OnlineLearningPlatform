@@ -5,6 +5,7 @@ const UserSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
+  image: { type: String } // Add this if you want to store the image filename
 });
 
 // Password hashing middleware
