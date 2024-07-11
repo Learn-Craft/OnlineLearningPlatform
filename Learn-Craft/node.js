@@ -20,6 +20,12 @@ app.use(express.json());
 // Serve static files from the 'css' directory
 app.use('/css', express.static(path.join(__dirname, 'css')));
 
+// static images 
+app.use('/IMG', express.static(path.join(__dirname, 'IMG')));
+
+// static javascript file
+app.use('/JS', express.static(path.join(__dirname, 'JS')));
+
 // Define a list of available pages
 const pages = [
     'home', 'about', 'contact', 'courses', 'login', 
@@ -52,3 +58,6 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`Server running on http://127.0.0.1:${PORT}`);
 });
+
+
+// experiment area
