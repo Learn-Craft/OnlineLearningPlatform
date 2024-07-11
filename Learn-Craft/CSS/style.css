@@ -396,6 +396,7 @@ section{
   border-radius: .5rem;
   background-color: var(--white);
   padding: 2rem;
+  height: 100%;
 }
 
 .quick-select .box-container .box .title{
@@ -492,6 +493,7 @@ section.instructor{
   border-radius: .5rem;
   background-color: var(--white);
   padding: 2rem;
+  height: 100%;
 }
 
 .courses .box-container .box .tutor{
@@ -1390,6 +1392,7 @@ section.instructor{
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  color: var(--black);
 }
 
 .form-container form p span{
