@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head id="head">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <!-- add the CSS -->
+    <link rel="stylesheet" href="../CSS/style.css">
+    <!-- FOnt Awesome Link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <title>Register Page</title>
+</head>
+<body>
+    <!-- header section Starts -->
+    <header class="header">
+        <section class="flex">
+            <a href="home.html" class="logo">Learn-Craft</a>
+
+            <form action="/api/auth/login" method="POST" class="search-form">
+                <input type="text" name="search_box" placeholder="Search Courses...." required maxlength="100">
+                <button type="submit" class="fas fa-search" name="search_box"></button>
+            </form>
+
+            <div class="icons">
+                <div id="menu-btn" class="fas fa-bars"></div>
+                <div id="search-btn" class="fas fa-search"></div>
+                <div id="user-btn" class="fas fa-language"></div>
+                <div id="toggle-btn" class="fas fa-sun"></div>
+            </div>
+        </section>
+    </header>
+    <!-- header section ends -->
+    <!-- side bar section starts -->
+    <div class="side-bar">
+        <div class="close-side-bar">
+            <i class="fas fa-times"></i>
+        </div>
+
+        <div class="profile">
+            <img src="../IMG/defaltloginimage.png" alt="">
+            <div class="flex-btn">
+                <a href="login.html" class="option-btn">login</a>
+                <a href="register.html" class="option-btn">Register</a>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <a href="home.html"><i class="fas fa-home"></i><span>Home</span></a>
+            <a href="about.html"><i class="fas fa-question"></i><span>About Us</span></a>
+            <a href="courses.html"><i class="fas fa-graduation-cap"></i><span>Courses</span></a>
+            <a href="teachers.html"><i class="fas fa-chalkboard-user"></i><span>Tutors</span></a>
+            <a href="blog.html"><i class="fas fa-blog"></i><span>Blogs</span></a>
+            <a href="contact.html"><i class="fas fa-headset"></i><span>Contact Us</span></a>
+        </nav>
+    </div>
+    <!-- side bar section ends -->
+    <!-- Register section starts -->
+    <section class="form-container">
+        <form action="/api/auth/register" method="POST" enctype="multipart/form-data">
+            <h3>Register New</h3>
+            <p>Your Name<span>*</span></p>
+            <input type="text" name="username" placeholder="Enter your Name" maxlength="100" required class="box">
+            <p>Your Email<span>*</span></p>
+            <input type="email" name="email" placeholder="Enter Your Email" maxlength="100" class="box" required>
+            <p>Your Password<span>*</span></p>
+            <input type="password" name="password" placeholder="Enter your Password" maxlength="50" class="box" required>
+            <p>Confirm Password<span>*</span></p>
+            <input type="password" name="c_password" placeholder="Confirm your Password" maxlength="50" class="box" required>
+            <p>Select Photo<span>*</span></p>
+            <input type="file" name="image" accept="image/*" class="box">
+            <input type="submit" value="Register Now" name="submit" class="btn">
+        </form>
+    </section>
+    <!-- Register section ends -->
+
+    <!-- footer section starts -->
+    <footer class="footer">
+        <div class="footer-1">
+            <div>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div>
+                <a href="#">Cookies</a>
+            </div>
+            <div>
+                <a href="#">Use and Help</a>
+            </div>
+            <div>
+                <a href="#">About us</a>
+            </div>
+            <div>
+                <a href="#">Term of Use</a>
+            </div>
+        </div>
+        &copy; copyright @ 2022 by <span>Hasti Donga</span> | all rights reserved!
+    </footer>
+    <!-- footer section ends -->
+    <!-- custom js file link  -->
+    <script type="text/javascript" src="../JS/javascript.js"></script>
+</body>
+</html>

@@ -1,17 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const { register, login } = require('../controllers/authController');
+const authController = require('../controllers/authController');
 
-console.log('Auth routes loaded'); // Debug message
+// Register route
+router.post('/register', authController.register);
 
-router.post('/register', (req, res, next) => {
-    console.log('Register route hit'); // Debug message
-    next();
-}, register);
-
-router.post('/login', (req, res, next) => {
-    console.log('Login route hit'); // Debug message
-    next();
-}, login);
+// Login route
+router.post('/login', authController.login);
 
 module.exports = router;

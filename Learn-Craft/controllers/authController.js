@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
+const Enrollment = require('../models/Enrollment');
 const bcrypt = require('bcrypt');
 const multer = require('multer');
 
@@ -28,7 +29,8 @@ const register = [
     try {
       const user = new User({ username, email, password, image });
       await user.save();
-      res.status(201).json({ message: 'User registered successfully' });
+      req.session.user = { id: user._id, name: user.username, email: user.email };
+      res.redirect('/dashboard'); // Redirect to a route after successful registration
     } catch (error) {
       res.status(500).json({ error: error.message });
     }
@@ -51,7 +53,8 @@ const login = async (req, res) => {
     const enrollments = await Enrollment.find({ user: user._id }).populate('course');
     const courses = enrollments.map(enrollment => enrollment.course);
 
-    res.status(200).json({ token, courses });
+    req.session.user = { id: user._id, name: user.username, email: user.email };
+    res.redirect('/dashboard'); // Redirect to a route after successful login
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

@@ -1,6 +1,8 @@
 const express = require('express');
 const path = require('path');
 const dotenv = require('dotenv');
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
 const connectDB = require('./config/db');
 
 // Load environment variables
@@ -16,37 +18,48 @@ const app = express();
 
 // Set up middleware to parse JSON requests
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// Serve static files from the 'css' directory
-app.use('/css', express.static(path.join(__dirname, 'css')));
-
-// static images 
+// Serve static files from the 'CSS', 'IMG', 'JS', and 'uploads' directories
+app.use('/css', express.static(path.join(__dirname, 'CSS')));
 app.use('/IMG', express.static(path.join(__dirname, 'IMG')));
-
-// static javascript file
 app.use('/JS', express.static(path.join(__dirname, 'JS')));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// Define a list of available pages
-const pages = [
-    'home', 'about', 'contact', 'courses', 'login', 
-    'playlist', 'profile', 'register', 'teacher_profile', 
-    'teachers', 'update', 'watch_video'
-];
+// Set up session management
+app.use(session({
+    secret: 'your_secret_key',
+    resave: false,
+    saveUninitialized: true,
+    store: MongoStore.create({ mongoUrl: process.env.MONGO_URI })
+}));
 
-// Serve HTML files dynamically
+// Middleware to add user data to every response
+app.use((req, res, next) => {
+    res.locals.user = req.session.user;
+    next();
+});
+
+// Set view engine to EJS
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+// Import and use authentication routes
+app.use('/api/auth', require('./routes/auth'));
+app.use('/dashboard', require('./routes/dashboard')); // Add dashboard route
+
+// Serve EJS templates dynamically
+const pages = ['home', 'about', 'contact', 'courses', 'login', 'playlist', 'profile', 'register', 'teacher_profile', 'teachers', 'update', 'watch_video'];
 pages.forEach(page => {
     app.get(`/${page}.html`, (req, res) => {
-        res.sendFile(path.join(__dirname, 'views', `${page}.html`));
+        res.render(page, { user: req.session.user });
     });
 });
 
 // Handle the root route
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'home.html'));
+    res.render('home', { user: req.session.user });
 });
-
-// Import and use authentication routes
-app.use('/api/auth', require('./routes/auth'));
 
 // Handle 404 errors
 app.use((req, res) => {
@@ -58,6 +71,3 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`Server running on http://127.0.0.1:${PORT}`);
 });
-
-
-// experiment area
