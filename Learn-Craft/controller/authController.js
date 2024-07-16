@@ -30,7 +30,7 @@ const register = [
       const user = new User({ username, email, password, image });
       await user.save();
       req.session.user = { id: user._id, name: user.username, email: user.email };
-      res.redirect('/dashboard'); // Redirect to a route after successful registration
+      res.redirect('/home.html'); // Redirect to home after successful registration
     } catch (error) {
       res.status(500).json({ error: error.message });
     }
@@ -53,11 +53,20 @@ const login = async (req, res) => {
     const enrollments = await Enrollment.find({ user: user._id }).populate('course');
     const courses = enrollments.map(enrollment => enrollment.course);
 
-    req.session.user = { id: user._id, name: user.username, email: user.email };
-    res.redirect('/dashboard'); // Redirect to a route after successful login
+    req.session.user = { id: user._id, name: user.username, email: user.email, courses: courses };
+    res.redirect('/home.html'); // Redirect to home after successful login
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 };
 
-module.exports = { register, login };
+const logout = (req, res) => {
+  req.session.destroy(err => {
+    if (err) {
+      return res.status(500).json({ error: 'Failed to log out' });
+    }
+    res.redirect('/login.html');
+  });
+};
+
+module.exports = { register, login, logout };

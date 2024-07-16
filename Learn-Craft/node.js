@@ -28,9 +28,9 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Set up session management
 app.use(session({
-    secret: 'your_secret_key',
+    secret: 'your_secret_key', // Replace with your own secret key
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     store: MongoStore.create({ mongoUrl: process.env.MONGO_URI })
 }));
 
@@ -49,7 +49,7 @@ app.use('/api/auth', require('./routes/auth'));
 app.use('/dashboard', require('./routes/dashboard')); // Add dashboard route
 
 // Serve EJS templates dynamically
-const pages = ['home', 'about', 'contact', 'courses', 'login', 'playlist', 'profile', 'register', 'teacher_profile', 'teachers', 'update', 'watch_video', 'blog'];
+const pages = ['home', 'about', 'contact', 'courses', 'login', 'playlist', 'profile', 'register', 'teacher_profile', 'teachers', 'update', 'watch_video'];
 pages.forEach(page => {
     app.get(`/${page}.html`, (req, res) => {
         res.render(page, { user: req.session.user });
