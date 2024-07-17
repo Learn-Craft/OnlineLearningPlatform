@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
     Promise.all([
         loadContent('header.ejs', '.header'),
         loadContent('footer.ejs', '.footer'),
-        loadContent('sidebar.ejs', 'side-bar')
     ]).then(() => {
         let body = document.body;
 
@@ -108,5 +107,45 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         }
+
+        // Get all modal elements
+        const modals = document.querySelectorAll('.modal');
+        const closeButtons = document.querySelectorAll('.close-btn');
+
+        // Function to open the modal
+        function openModal(modal) {
+            modal.style.display = "block";
+        }
+
+        // Function to close the modal
+        function closeModal(modal) {
+            modal.style.display = "none";
+        }
+
+        // Add event listeners to links
+        document.querySelectorAll('.footer-1 a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const modalId = link.getAttribute('data-modal');
+                const modal = document.getElementById(modalId);
+                openModal(modal);
+            });
+        });
+
+        // Add event listeners to close buttons
+        closeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                closeModal(button.closest('.modal'));
+            });
+        });
+
+        // Close modal when clicking outside of the modal
+        window.addEventListener('click', (event) => {
+            modals.forEach(modal => {
+                if (event.target == modal) {
+                    closeModal(modal);
+                }
+            });
+        });
     });
 });
