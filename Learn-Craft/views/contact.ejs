@@ -17,15 +17,22 @@
   <!-- side bar section starts -->
   <div class="side-bar">
     <div class="close-side-bar">
-      <i class="fas fa-times"></i>
+        <i class="fas fa-times"></i>
     </div>
 
     <div class="profile">
-        <img src="../IMG/defaltloginimage.png" alt="">
-        <div class="flex-btn">
-            <a href="login.ejs" class="option-btn">login</a>
-            <a href="register.ejs" class="option-btn">Register</a>
-        </div>
+        <img src="/IMG/defaltloginimage.png" alt="">
+        <% if (user) { %>
+            <h3><%= user.name %></h3>
+            <span>Student</span>
+            <a href="profile.ejs" class="btn">View Profile</a>
+            <a href="/api/auth/logout" class="btn">Logout</a>
+        <% } else { %>
+            <div class="flex-btn">
+                <a href="login.ejs" class="option-btn">login</a>
+                <a href="register.ejs" class="option-btn">Register</a>
+            </div>
+        <% } %>
     </div>
 
     <nav class="navbar">

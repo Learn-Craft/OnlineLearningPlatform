@@ -17,17 +17,23 @@
   <!-- side bar section starts -->
   <div class="side-bar">
     <div class="close-side-bar">
-      <i class="fas fa-times"></i>
+        <i class="fas fa-times"></i>
     </div>
 
     <div class="profile">
-        <img src="../IMG/defaltloginimage.png" alt="">
-        <div class="flex-btn">
-            <a href="login.ejs" class="option-btn">login</a>
-            <a href="register.ejs" class="option-btn">Register</a>
-        </div>
+        <img src="/IMG/defaltloginimage.png" alt="">
+        <% if (user) { %>
+            <h3><%= user.name %></h3>
+            <span>Student</span>
+            <a href="profile.ejs" class="btn">View Profile</a>
+            <a href="/api/auth/logout" class="btn">Logout</a>
+        <% } else { %>
+            <div class="flex-btn">
+                <a href="login.ejs" class="option-btn">login</a>
+                <a href="register.ejs" class="option-btn">Register</a>
+            </div>
+        <% } %>
     </div>
-
     <nav class="navbar">
       <a href="home.ejs"><i class="fas fa-home"></i><span>Home</span></a>
       <a href="about.ejs"><i class="fas fa-question"></i><span>About Us</span></a>
@@ -35,7 +41,7 @@
       <a href="teachers.ejs"><i class="fas fa-chalkboard-user"></i><span>Tutors</span></a>
       <a href="blog.ejs"><i class="fas fa-blog"></i><span>Blogs</span></a>
       <a href="contact.ejs"><i class="fas fa-headset"></i><span>Contact Us</span></a>
-    </nav>
+    </nav> 
   </div>
 
   <!-- side bar section ends -->

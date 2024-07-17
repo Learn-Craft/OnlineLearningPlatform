@@ -4,7 +4,7 @@ const router = express.Router();
 // Ensure user is logged in
 router.get('/', (req, res) => {
   if (!req.session.user) {
-    return res.redirect('/login.html');
+    return res.redirect('/login.ejs');
   }
   res.render('dashboard', { user: req.session.user });
 });

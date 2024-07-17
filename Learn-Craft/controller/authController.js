@@ -30,7 +30,7 @@ const register = [
       const user = new User({ username, email, password, image });
       await user.save();
       req.session.user = { id: user._id, name: user.username, email: user.email };
-      res.redirect('/home.html'); // Redirect to home after successful registration
+      res.redirect('/home.ejs'); // Redirect to home after successful registration
     } catch (error) {
       res.status(500).json({ error: error.message });
     }
@@ -54,7 +54,7 @@ const login = async (req, res) => {
     const courses = enrollments.map(enrollment => enrollment.course);
 
     req.session.user = { id: user._id, name: user.username, email: user.email, courses: courses };
-    res.redirect('/home.html'); // Redirect to home after successful login
+    res.redirect('/home.ejs'); // Redirect to home after successful login
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -65,7 +65,7 @@ const logout = (req, res) => {
     if (err) {
       return res.status(500).json({ error: 'Failed to log out' });
     }
-    res.redirect('/login.html');
+    res.redirect('/login.ejs');
   });
 };
 
