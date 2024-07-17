@@ -49,7 +49,7 @@ app.use('/api/auth', require('./routes/auth'));
 app.use('/dashboard', require('./routes/dashboard')); // Add dashboard route
 
 // Serve EJS templates dynamically
-const pages = ['home', 'about', 'contact', 'courses', 'login', 'playlist', 'profile', 'register', 'teacher_profile', 'teachers', 'update', 'watch_video'];
+const pages = ['home', 'about', 'contact', 'courses', 'login', 'playlist', 'profile', 'register', 'teacher_profile', 'teachers', 'update', 'watch_video', 'blog'];
 pages.forEach(page => {
     app.get(`/${page}.html`, (req, res) => {
         res.render(page, { user: req.session.user });
