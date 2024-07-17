@@ -32,6 +32,7 @@ if (menuBtn && sideBar) {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     // Load header and footer content
     Promise.all([
         loadContent('header.ejs', '.header'),
@@ -70,6 +71,8 @@ if (menuBtn && sideBar) {
         body.classList.toggle('active');
     }
 
+=======
+>>>>>>> parent of 41139a4 (header footer changes)
 =======
 >>>>>>> parent of 41139a4 (header footer changes)
     let closeSideBarBtn = document.querySelector('.side-bar .close-side-bar');
@@ -114,6 +117,7 @@ if (darkMode === 'enabled') {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         // Ensure toggleBtn exists before adding event listener
         if (toggleBtn) {
             toggleBtn.onclick = (e) => {
@@ -128,6 +132,8 @@ if (darkMode === 'enabled') {
     });
 });
 =======
+=======
+>>>>>>> parent of 41139a4 (header footer changes)
 // Ensure toggleBtn exists before adding event listener
 if (toggleBtn) {
     toggleBtn.onclick = (e) => {
@@ -139,4 +145,7 @@ if (toggleBtn) {
         }
     }
 }
+<<<<<<< HEAD
+>>>>>>> parent of 41139a4 (header footer changes)
+=======
 >>>>>>> parent of 41139a4 (header footer changes)
