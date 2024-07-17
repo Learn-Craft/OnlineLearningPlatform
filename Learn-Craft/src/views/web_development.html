@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head id="head">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <meta name="robots" content="noindex, nofollow" >
+    <!-- add the CSS -->
+    <link rel="stylesheet" href="../CSS/style.css">
+    <!-- FOnt Awesome Link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <title>Register Page</title>
+  </head>
+  <body>
+    <!-- header section Starts -->
+    <header class="header">
+      <section class="flex">
+        <a href="home.html" class="logo">Learn-Craft</a>
+
+        <form action="" method="post" class="search-form">
+          <input type="text" name="search_box" placeholder="Search Courses...." required maxlength="100">
+          <button type="submit" class="fas fa-search" name="search_box"></button>
+        </form>
+
+        <div class="icons">
+          <div id="menu-btn" class="fas fa-bars"></div>
+          <div id="search-btn" class="fas fa-search"></div>
+          <div id="user-btn" class="fas fa-language"></div>
+          <div id="toggle-btn" class="fas fa-sun"></div>
+        </div>
+      </section>
+    </header>
+    <!-- header section ends -->
+  <!-- side bar section starts -->
+  <div class="side-bar">
+    <div class="close-side-bar">
+        <i class="fas fa-times"></i>
+    </div>
+
+    <div class="profile">
+<<<<<<< HEAD:Learn-Craft/views/web_development.ejs
+        <img src="/IMG/defaltloginimage.png" alt="">
+        <% if (user) { %>
+            <h3><%= user.name %></h3>
+            <span>Student</span>
+            <a href="profile.ejs" class="btn">View Profile</a>
+            <a href="/api/auth/logout" class="btn">Logout</a>
+        <% } else { %>
+            <div class="flex-btn">
+                <a href="login.ejs" class="option-btn">login</a>
+                <a href="register.ejs" class="option-btn">Register</a>
+            </div>
+        <% } %>
+=======
+        <img src="../IMG/defaltloginimage.png" alt="">
+        <div class="flex-btn">
+            <a href="login.html" class="option-btn">login</a>
+            <a href="register.html" class="option-btn">Register</a>
+        </div>
+>>>>>>> parent of 41139a4 (header footer changes):Learn-Craft/views/web_development.html
+    </div>
+
+    <nav class="navbar">
+      <a href="home.html"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="about.html"><i class="fas fa-question"></i><span>About Us</span></a>
+      <a href="courses.html"><i class="fas fa-graduation-cap"></i><span>Courses</span></a>
+      <a href="teachers.html"><i class="fas fa-chalkboard-user"></i><span>Tutors</span></a>
+      <a href="blog.html"><i class="fas fa-blog"></i><span>Blogs</span></a>
+      <a href="contact.html"><i class="fas fa-headset"></i><span>Contact Us</span></a>
+    </nav>
+  </div>
+
+
+  <!-- side bar section ends -->
+
+ <!-- Courses Section starts -->
+ <section class="courses">
+    <h1 class="heading">Our Popular Courses</h1>
+
+    <div class="box-container">
+
+      <div class="box">
+        <div class="container">
+          <img src="../IMG/thumb-1.png" class="thumb" alt="thumb1">
+          <div class="overlay">
+            <div class="description">Learn HTML basics and advanced techniques with our comprehensive tutorial.
+            </div>
+          </div>
+        </div>
+        <h3 class="title">Complete Html Tutorial</h3>
+        <a href="playlist.ejs" class="inline-btn">View Playlist</a>
+      </div>
+
+      <div class="box">
+        <div class="container">
+          <img src="../IMG/thumb-2.png" class="thumb" alt="thumb1">
+          <div class="overlay">
+            <div class="description">Learn CSS from basics to advanced techniques with our comprehensive tutorial series.
+            </div>
+          </div>
+        </div>
+        <h3 class="title">Complete CSS Tutorial</h3>
+        <a href="playlist.ejs" class="inline-btn">View Playlist</a>
+      </div>
+
+      <div class="box"> 
+        <div class="container">
+          <img src="../IMG/thumb-3.png" class="thumb" alt="thumb1">
+          <div class="overlay">
+            <div class="description">Master JavaScript fundamentals with our comprehensive tutorial, covering essential concepts and practical applications.
+            </div>
+          </div>
+        </div>
+        <h3 class="title">Complete JS Tutorial</h3>
+        <a href="playlist.ejs" class="inline-btn">View Playlist</a>
+      </div>
+
+      <div class="box">
+        <div class="container">
+          <img src="../IMG/thumb-4.png" class="thumb" alt="thumb1">
+          <div class="overlay">
+            <div class="description">Learn Bootstrap from scratch with our comprehensive tutorial covering responsive web design and UI components.
+            </div>
+          </div>
+        </div> 
+        <h3 class="title">Complete Bootstrap Tutorial</h3>
+        <a href="playlist.ejs" class="inline-btn">View Playlist</a>
+      </div>
+
+      <div class="box">
+        <div class="container">
+          <img src="../IMG/thumb-5.png" class="thumb" alt="thumb1">
+          <div class="overlay">
+            <div class="description">Learn jQuery fundamentals and advanced techniques with our comprehensive tutorial, perfect for web developers of all levels.
+            </div>
+          </div>
+        </div>
+        <h3 class="title">Complete JQuery Tutorial</h3>
+        <a href="playlist.ejs" class="inline-btn">View Playlist</a>
+      </div>
+
+      <div class="box">
+        <div class="container">
+          <img src="../IMG/thumb-6.png" class="thumb" alt="thumb1">
+          <div class="overlay">
+            <div class="description">Learn how to enhance CSS with variables, nesting, and mixins for efficient stylesheet management.
+            </div>
+          </div>
+        </div>
+        <h3 class="title">Complete SASS Tutorial</h3>
+        <a href="playlist.ejs" class="inline-btn">View Playlist</a>
+      </div>
+
+      <div class="box"> 
+        <div class="container">
+          <img src="../IMG/thumb-7.png" class="thumb" alt="thumb1">
+          <div class="overlay">
+            <div class="description">Learn PHP programming from basics to advanced topics with practical examples and projects.
+            </div>
+          </div>
+        </div>
+        <h3 class="title">Complete PHP Tutorial</h3>
+        <a href="playlist.ejs" class="inline-btn">View Playlist</a>
+      </div>
+
+      <div class="box">
+        <div class="container">
+          <img src="../IMG/thumb-9.png" class="thumb" alt="thumb1">
+          <div class="overlay">
+            <div class="description">Learn React.js from scratch with our comprehensive tutorial, covering state management, components, and hooks.
+            </div>
+          </div>
+        </div>
+        <h3 class="title">Complete React Tutorial</h3>
+        <a href="playlist.ejs" class="inline-btn">View Playlist</a>
+      </div>
+
+    </div>
+    
+  </section>
+  <!-- Courses Section ends -->
+
+   <!-- footer section starts -->
+
+    <footer class="footer"></footer>
+    <!-- footer section ends -->
+    <!-- custom js file link  -->
+    <script type="text/javascript" src="../JS/javascript.js"></script>
+  </body>
+</html>
