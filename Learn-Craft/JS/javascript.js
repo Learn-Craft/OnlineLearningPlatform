@@ -20,7 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Load header and footer content
     Promise.all([
         loadContent('header.ejs', '.header'),
-        loadContent('footer.ejs', '.footer')
+        loadContent('footer.ejs', '.footer'),
+        loadContent('sidebar.ejs', 'side-bar')
     ]).then(() => {
         let body = document.body;
 
