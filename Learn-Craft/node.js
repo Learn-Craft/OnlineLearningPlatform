@@ -40,6 +40,15 @@ app.use((req, res, next) => {
     next();
 });
 
+// showing header and footer
+app.get('/header.ejs', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'header.ejs'));
+});
+
+app.get('/footer.ejs', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'footer.ejs'));
+});
+
 // Set view engine to EJS
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
