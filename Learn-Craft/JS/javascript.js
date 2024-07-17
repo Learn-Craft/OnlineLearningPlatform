@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
     Promise.all([
         loadContent('header.ejs', '.header'),
         loadContent('footer.ejs', '.footer'),
-        loadContent('sidebar.ejs', 'side-bar')
     ]).then(() => {
         let body = document.body;
 
