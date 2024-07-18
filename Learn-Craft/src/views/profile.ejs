@@ -12,62 +12,38 @@
   </head>
   <body>
     <!-- header section Starts -->
-    <header class="header">
-      <section class="flex">
-        <a href="home.html" class="logo">Learn-Craft</a>
-
-        <form action="" method="post" class="search-form">
-          <input type="text" name="search_box" placeholder="Search Courses...." required maxlength="100">
-          <button type="submit" class="fas fa-search" name="search_box"></button>
-        </form>
-
-        <div class="icons">
-          <div id="menu-btn" class="fas fa-bars"></div>
-          <div id="search-btn" class="fas fa-search"></div>
-          <div id="user-btn" class="fas fa-language"></div>
-          <div id="toggle-btn" class="fas fa-sun"></div>
-        </div>
-      </section>
-    </header>
+    <header class="header"></header>
     <!-- header section ends -->
-  <!-- side bar section starts -->
-  <div class="side-bar">
-    <div class="close-side-bar">
-        <i class="fas fa-times"></i>
-    </div>
-
-    <div class="profile">
-<<<<<<< HEAD
-        <img src="/IMG/defaltloginimage.png" alt="">
-        <% if (user) { %>
-            <h3><%= user.name %></h3>
-            <span>Student</span>
-            <a href="profile.ejs" class="btn">View Profile</a>
-            <a href="/api/auth/logout" class="btn">Logout</a>
-        <% } else { %>
-            <div class="flex-btn">
-                <a href="login.ejs" class="option-btn">login</a>
-                <a href="register.ejs" class="option-btn">Register</a>
-            </div>
-        <% } %>
-=======
-        <img src="../IMG/defaltloginimage.png" alt="">
-        <div class="flex-btn">
-            <a href="login.html" class="option-btn">login</a>
-            <a href="register.html" class="option-btn">Register</a>
+    <!-- side bar section starts -->
+    <div class="side-bar">
+        <div class="close-side-bar">
+            <i class="fas fa-times"></i>
         </div>
->>>>>>> parent of 41139a4 (header footer changes)
-    </div>
 
-    <nav class="navbar">
-      <a href="home.html"><i class="fas fa-home"></i><span>Home</span></a>
-      <a href="about.html"><i class="fas fa-question"></i><span>About Us</span></a>
-      <a href="courses.html"><i class="fas fa-graduation-cap"></i><span>Courses</span></a>
-      <a href="teachers.html"><i class="fas fa-chalkboard-user"></i><span>Tutors</span></a>
-      <a href="blog.html"><i class="fas fa-blog"></i><span>Blogs</span></a>
-      <a href="contact.html"><i class="fas fa-headset"></i><span>Contact Us</span></a>
-    </nav>
-  </div>
+        <div class="profile">
+            <img src="/IMG/defaltloginimage.png" alt="">
+            <% if (user) { %>
+                <h3><%= user.name %></h3>
+                <span>Student</span>
+                <a href="profile.ejs" class="btn">View Profile</a>
+                <a href="/api/auth/logout" class="btn">Logout</a>
+            <% } else { %>
+                <div class="flex-btn">
+                    <a href="login.ejs" class="option-btn">login</a>
+                    <a href="register.ejs" class="option-btn">Register</a>
+                </div>
+            <% } %>
+        </div>
+
+        <nav class="navbar">
+            <a href="home.ejs"><i class="fas fa-home"></i><span>Home</span></a>
+            <a href="about.ejs"><i class="fas fa-question"></i><span>About Us</span></a>
+            <a href="courses.ejs"><i class="fas fa-graduation-cap"></i><span>Courses</span></a>
+            <a href="teachers.ejs"><i class="fas fa-chalkboard-user"></i><span>Tutors</span></a>
+            <a href="blog.ejs"><i class="fas fa-blog"></i><span>Blogs</span></a>
+            <a href="contact.ejs"><i class="fas fa-headset"></i><span>Contact Us</span></a>
+        </nav>
+    </div>
 
   <!-- side bar section ends -->
   <!-- profile section starts -->

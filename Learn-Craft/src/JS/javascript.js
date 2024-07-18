@@ -127,7 +127,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 e.preventDefault();
                 const modalId = link.getAttribute('data-modal');
                 const modal = document.getElementById(modalId);
-                openModal(modal);
+                if (modal) {
+                    openModal(modal);
+                }
             });
         });
 
@@ -146,5 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
+    }).catch(error => {
+        console.error('Error loading header and footer:', error);
     });
 });
