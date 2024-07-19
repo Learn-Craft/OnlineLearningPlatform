@@ -57,6 +57,15 @@ pages.forEach(page => {
     });
 });
 
+// Serve header and footer templates
+app.get('/header.ejs', (req, res) => {
+    res.render('header', { user: req.session.user });
+});
+
+app.get('/footer.ejs', (req, res) => {
+    res.render('footer', { user: req.session.user });
+});
+
 // Handle the root route
 app.get('/', (req, res) => {
     res.render('home', { user: req.session.user });
