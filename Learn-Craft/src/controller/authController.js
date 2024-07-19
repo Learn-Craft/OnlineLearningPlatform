@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 const Enrollment = require('../models/Enrollment');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const multer = require('multer');
 
 // Set up multer for file uploads
