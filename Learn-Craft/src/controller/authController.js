@@ -1,8 +1,7 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 const Enrollment = require('../models/Enrollment');
-const bcryptjs = require('bcryptjs');
-const bcrypt = require('bcrypt');
+const bcryptjs = require('bcryptjs'); // Use only bcryptjs
 const multer = require('multer');
 
 // Set up multer for file uploads
@@ -28,7 +27,8 @@ const register = [
     }
 
     try {
-      const user = new User({ username, email, password, image });
+      const hashedPassword = await bcryptjs.hash(password, 10); // Hash the password with bcryptjs
+      const user = new User({ username, email, password: hashedPassword, image });
       await user.save();
       req.session.user = { id: user._id, name: user.username, email: user.email };
       res.redirect('/home.ejs'); // Redirect to home after successful registration
@@ -45,7 +45,7 @@ const login = async (req, res) => {
     const user = await User.findOne({ email });
     if (!user) return res.status(400).json({ message: 'Invalid credentials' });
 
-    const isMatch = await bcrypt.compare(password, user.password);
+    const isMatch = await bcryptjs.compare(password, user.password); // Compare with bcryptjs
     if (!isMatch) return res.status(400).json({ message: 'Invalid credentials' });
 
     const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
