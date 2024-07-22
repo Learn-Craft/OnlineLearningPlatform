@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 return response.text();
             })
             .then(data => {
-                console.log('Content loaded for', selector);
                 document.querySelector(selector).innerHTML = data;
             })
             .catch(error => {
