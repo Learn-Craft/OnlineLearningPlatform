@@ -9,9 +9,15 @@ const connectDB = require('./config/db');
 dotenv.config();
 
 // Connect to MongoDB
-connectDB().catch(err => {
-    console.error('Failed to connect to MongoDB:', err);
-});
+(async () => {
+    try {
+        await connectDB();
+        console.log('MongoDB connected successfully');
+    } catch (err) {
+        console.error('Failed to connect to MongoDB:', err);
+        process.exit(1); // Exit the process if DB connection fails
+    }
+})();
 
 // Initialize the Express app
 const app = express();
@@ -32,7 +38,10 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
-    cookie: { secure: process.env.NODE_ENV === 'production' } // Use secure cookies in production
+    cookie: {
+        secure: process.env.NODE_ENV === 'production', // Use secure cookies in production
+        httpOnly: true // Helps mitigate the risk of client side script accessing the protected cookie
+    }
 }));
 
 // Middleware to add user data to every response
