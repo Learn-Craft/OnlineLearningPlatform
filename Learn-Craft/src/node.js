@@ -5,6 +5,7 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const connectDB = require('./config/db');
 
+
 // Load environment variables
 dotenv.config();
 
@@ -25,6 +26,8 @@ const app = express();
 // Set up middleware to parse JSON and URL-encoded requests
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+
 
 // Serve static files from the 'CSS', 'IMG', 'JS', and 'uploads' directories
 app.use('/css', express.static(path.join(__dirname, 'CSS')));
@@ -59,7 +62,7 @@ app.use('/api/auth', require('./routes/auth'));
 app.use('/dashboard', require('./routes/dashboard')); // Add dashboard route
 
 // Serve EJS templates dynamically
-const pages = ['home', 'about', 'contact', 'courses', 'login', 'playlist', 'profile', 'register', 'teacher_profile', 'teachers', 'update', 'watch_video', 'blog'];
+const pages = ['home', 'about', 'contact', 'courses', 'login', 'playlist', 'profile', 'register', 'teacher_profile', 'teachers', 'update', 'watch_video', 'blog', 'business', 'web_development', 'design', 'it', 'marketing', 'personal_developmet', 'view_blog', 'software', 'science'];
 pages.forEach(page => {
     app.get(`/${page}.ejs`, (req, res) => {
         res.render(page, { user: req.session.user });
